@@ -29,8 +29,8 @@ class Postcode {
 
 	public function mutatePostcode($postcode)
 	{
-		// Ensure the postcode is all upper case with no spaces
-		return preg_replace('/ /', '', strtoupper($postcode));
+		// Ensure the postcode is all upper case with no leading or trailing spaces
+        	return strtoupper(trim($postcode));
 	}
 
 	public function lookup($postcode)
